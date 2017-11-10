@@ -12,7 +12,7 @@
         crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/indexStyle.css">
+    <link rel="stylesheet" href="css/orderStyle.css">
 </head>
 
 <body>
@@ -33,26 +33,70 @@
                     <li>
                         <a href="index.html">Početna</a>
                     </li>
-                    <li>
-                        <a href="#">Meni</a>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Meni
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="menu.html#accordion">Asortiman</a>
+                            </li>
+                            <li>
+                                <a href="menu.html#akcije">Akcije</a>
+                            </li>
+                            <li>
+                                <a href="menu.html#nagrade">Nagrade</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <a href="#">Naručivanje</a>
+                        <a href="order.html">Naručivanje</a>
+                    </li>
+                    <li>
+                        <a href="aboutUs.html">O nama</a>
                     </li>
                     <li>
                         <a href="contact.html">Kontakt</a>
                     </li>
                     <li>
-                        <a href="#">Galerija</a>
+                        <a href="galery.html">Galerija</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <div id="forma" style="margin-top: 6em">
+        <form>
+            <div class="col-sm-6">
+                <p>Ime *</p>
+                <input class="form-control" id="name" name="name" placeholder="Ime" type="text" required>
+                <p>Prezime *</p>
+                <input class="form-control" id="surname" name="surname" placeholder="Prezime" type="text" required>
+                <p>Telefon *</p>
+                <input class="form-control" id="phone" name="phone" placeholder="Telefon" type="number" required>
+                <p>Email </p>
+                <input class="form-control" id="email" name="email" placeholder="Email" type="text">
+            </div>
+            <div class="col-sm-6">
+                <p>Ulica *</p>
+                <input class="form-control" id="street" name="street" placeholder="Ulica" type="text" required>
+                <p>Broj *</p>
+                <input class="form-control" id="number" name="number" placeholder="Broj" type="number" required>
+                <p>Broj stana </p>
+                <input class="form-control" id="numberOfApartment" placeholder="Broj stana" type="number" required>
+                <p>Interfon </p>
+                <select class="form-control" name="interphone" id="interfon">
+                    <option value="Da">Da</option>
+                    <option value="Ne">Ne</option>
+                </select>
+            </div>
+        </form>
+    </div>
+
     <footer class="text-center footer">
         <div class="container">
-            <p>SLATKOTEKA</p>
+            <p>Slatkoteka | Višnjićeva 5, Beograd | Poručivanje i dostava: 065 33 00 508</p>
         </div>
     </footer>
 
