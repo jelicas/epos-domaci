@@ -61,12 +61,19 @@
                 <p class="text-center">
                     <strong>EMAIL</strong>
                 </p>
+                <br>
+                <a href="mailto:slatkoteka@gmail.com">slatkoteka@gmail.com</a>
+                <br>
+                <a href="www.slatkoteka.com">www.slatkoteka.rs</a>
             </div>
             <div class="col-sm-4">
                 <img id="phoneIcon" src="img/icon-phone-75x75.png" alt="Phone icon" class="img">
                 <br>
                 <p class="text-center">
                     <strong>TELEFON</strong>
+                </p>
+                <p style="font-size: 2.3em; color: yellow; margin-top: 0.5em;">
+                    <strong>0631234567</strong>
                 </p>
             </div>
             <div class="col-sm-4">
@@ -75,9 +82,56 @@
                 <p class="text-center">
                     <strong>ADRESA</strong>
                 </p>
+                <br>
+                <p style="margin-top: 0.5em;">
+                    <strong>Višnjićeva 5, Beograd</strong>
+                </p>
             </div>
         </div>
     </div>
+
+    <!-- Google Map -->
+    <div id="googleMap">
+        <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJQ8qMSktlWkcRnDmzqpAOnVY&key=AIzaSyCb9YVMQU_iWdCymFYlog7okmvcXs0ZKZg"
+            allowfullscreen></iframe>
+    </div>
+
+    <!-- Contact form -->
+    <form id="contact-form" action="" method="post" role="form">
+        <div id="contact" class="container">
+            <h3 class="text-center">Kontakt</h3>
+            <div class="row test">
+                <div class="col-md-4">
+                    <p>SLATKOTEKA</p>
+                    <p>
+                        <span class="glyphicon glyphicon-map-marker"></span>Višnjićeva 5, Beograd</p>
+                    <p>
+                        <span class="glyphicon glyphicon-phone"></span>Telefon: +381 631234567</p>
+                    <p>
+                        <span class="glyphicon glyphicon-envelope"></span>Email: slatkoteka@gmail.com</p>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <input class="form-control" id="name" name="name" placeholder="Ime" type="text" required>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                        </div>
+                    </div>
+                    <textarea class="form-control" id="comments" name="comments" placeholder="Poruka" rows="5" style="resize: none;"></textarea>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <button id="sendbtn" class="btn pull-right" type="submit">Pošalji</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+
 
 </body>
 
