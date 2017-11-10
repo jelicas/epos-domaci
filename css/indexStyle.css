@@ -1,10 +1,10 @@
 body {
-    background-image: url('../img/krofne-background.jpg');
+    background-color: rgb(238, 201, 231);
     height: 100%;
     margin-bottom: 60px;
 }
 
-.jumbotron{
+.jumbotron{ 
     background: transparent;
 }
 
