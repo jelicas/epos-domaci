@@ -62,6 +62,7 @@ nav {
 }
 
 #globalNav {
+	-webkit-transition: height .5s, line-height .5s; /* Safari */
     transition: height .5s, line-height .5s;
 }
 
