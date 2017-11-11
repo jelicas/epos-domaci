@@ -60,13 +60,6 @@ nav {
 .scrolled-nav .container-fluid {
     padding-top: 0.5em;
 }
-
-#globalNav {
-	-webkit-transition: height .5s, line-height .5s; /* Safari */
-    transition: height .5s, line-height .5s;
-}
-
-
 /*--------------*/
 
 #navBarList a {
