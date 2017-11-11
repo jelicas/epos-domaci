@@ -101,21 +101,27 @@
         <form>
             <div class="col-sm-6">
                 <p>Ime *</p>
-                <input class="form-control" id="name" name="name" placeholder="Ime" type="text" required>
+                <input class="form-control" id="name" name="name" placeholder="Ime" type="text" oninvalid="this.setCustomValidity('Unesite ime!')"
+                    oninput="setCustomValidity('')" required>
                 <p>Prezime *</p>
-                <input class="form-control" id="surname" name="surname" placeholder="Prezime" type="text" required>
+                <input class="form-control" id="surname" name="surname" placeholder="Prezime" type="text" oninvalid="this.setCustomValidity('Unesite prezime!')"
+                    oninput="setCustomValidity('')" required>
                 <p>Telefon *</p>
-                <input class="form-control" id="phone" name="phone" placeholder="Telefon" type="number" required>
+                <input class="form-control" id="phone" name="phone" placeholder="Telefon" type="number" oninvalid="this.setCustomValidity('Unesite broj telefona!')"
+                    oninput="setCustomValidity('')" required>
                 <p>Email </p>
                 <input class="form-control" id="email" name="email" placeholder="Email" type="text">
             </div>
             <div class="col-sm-6">
                 <p>Ulica *</p>
-                <input class="form-control" id="street" name="street" placeholder="Ulica" type="text" required>
+                <input class="form-control" id="street" name="street" placeholder="Ulica" type="text" oninvalid="this.setCustomValidity('Unesite naziv ulice!')"
+                    oninput="setCustomValidity('')" required>
                 <p>Broj *</p>
-                <input class="form-control" id="number" name="number" placeholder="Broj" type="number" required>
+                <input class="form-control" id="number" name="number" placeholder="Broj" type="number" oninvalid="this.setCustomValidity('Unesite broj zgrade!')"
+                    oninput="setCustomValidity('')" required>
                 <p>Broj stana </p>
-                <input class="form-control" id="numberOfApartment" placeholder="Broj stana" type="number" required>
+                <input class="form-control" id="numberOfApartment" placeholder="Broj stana" type="number" oninvalid="this.setCustomValidity('Unesite broj stana!')"
+                    oninput="setCustomValidity('')" required>
                 <p>Interfon </p>
                 <select class="form-control" name="interphone" id="interfon">
                     <option value="Da">Da</option>
