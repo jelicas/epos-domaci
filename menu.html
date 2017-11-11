@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Slatkoteka - Ovde žive krofne - Beograd dostava</title>
+    <title>Meni - Slatkoteka - Beograd dostava</title>
+
+    <!-- Favicon link -->
+    <link rel="icon" type="image/x-icon" href="img/favico.png">
 
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
@@ -16,15 +19,77 @@
 
     <link type="text/css" href="css/jquery-ui.css" rel="Stylesheet" />
     <script src="js/jquery-ui.js"></script>
+    
+    <!-- Accordion initialization -->
     <script>
         $(function () {
             $("#accordion").accordion();
         });
     </script>
+
+    <!-- Navbar scroll -->
+    <script>
+        $(document).ready(function () {
+            var scrollTop = 0;
+            $(window).scroll(function () {
+                scrollTop = $(window).scrollTop();
+                $('.counter').html(scrollTop);
+                //176
+                if (scrollTop >= 176) {
+                    $('#global-nav').addClass('scrolled-nav');
+                    $('#global-nav').addClass('navbar-fixed-top');
+                    $('#logoKrofna').hide();
+                    $('#accordionContainer').css('margin-top', '17.5em');
+                } else if (scrollTop < 176) {
+                    $('#global-nav').removeClass('scrolled-nav');
+                    $('#global-nav').removeClass('navbar-fixed-top');
+                    $("#logoKrofna").show();
+                    $('#accordionContainer').css('margin-top', '1.5em');
+                }
+
+            });
+        });
+
+    </script>
+
+    <!-- Smooth scrolling -->
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links in navbar + footer link
+            $(".dropdown-menu a").on('click', function (event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if 
+            });
+        })
+    </script>
+
 </head>
 
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
+
+    <!-- Navbar -->
+    <nav id="global-nav" class="navbar navbar-default navbar-top">
+        <a id="logoKrofna" href="index.html">
+            <img src="img/slatkoteka-logo-krofna.png" alt="Krofna">
+        </a>
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -32,12 +97,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">
-                    <img src="img/slatkoteka-logo-krofna.png" alt="Slatkoteka" style="width: 40px; height: 33px; display: block;">
-                </a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-left">
+                <ul id="navBarList" class="nav navbar-nav">
                     <li>
                         <a href="index.html">Početna</a>
                     </li>
@@ -47,7 +109,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="menu.html#accordion">Asortiman</a>
+                                <a href="menu.html#accordionContainer">Asortiman</a>
                             </li>
                             <li>
                                 <a href="menu.html#akcije">Akcije</a>
@@ -74,7 +136,7 @@
         </div>
     </nav>
 
-    <div>
+    <div id="accordionContainer" class="container">
         <h2 style="margin-top: 2em;">Asortiman</h2>
         <div id="accordion" style="margin-top: 1.5em;">
             <h3>Standard 90RSD</h3>
@@ -112,7 +174,7 @@
         </div>
     </div>
 
-    <div id="akcije">
+    <div id="akcije" class="container">
         <h2>Akcije</h2>
         <p> Slatkoteka izazov je akcija za one koji se opredele za 5 krofni, pa 1 dobiju na račun kuće. Osim toga, uveliko razvijamo
             akciju pod imenom Fit krofne u saradnji sa fitness trenerima iz Beograda. Želite krofnu sa posebnim dizajnom,
@@ -122,7 +184,7 @@
         </p>
     </div>
 
-    <div id="nagrade">
+    <div id="nagrade" class="container">
         <h2>Nagrade</h2>
         <p>O svim nagradama se možete informisati ovde kao i na našoj zvaničnoj instagram i facebook stranici. Na Instagram
             stranici, svakog ponedeljka, biramo najbolju fotku nedelje. Ta slika dobija šest krofni na poklon. Želimo da
@@ -132,12 +194,15 @@
             nudimo paket krofni najlepšoj slici. Tagujte nas na instagramu ili fejsbuku.</p>
     </div>
 
-    <footer>
-        <div>
-            <p>Slatkoteka | Višnjićeva 5, Beograd | Poručivanje i dostava: 065 33 00 508</p>
-        </div>
+    <!-- Footer -->
+    <footer class="text-center">
+        <a id="instalink" target="_blank" href="https://www.instagram.com">
+            <img id="instaicon" src="img/instaicon.png" alt="Instagram">
+        </a>
+        <a id="fblink" target="_blank" href="https://www.facebook.com">
+            <img id="fbicon" src="img/fbicon.png" alt="Facebook">
+        </a>
     </footer>
-
 
 </body>
 

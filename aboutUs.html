@@ -7,18 +7,50 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>O nama - Slatkoteka</title>
 
+    <!-- Favicon link -->
+    <link rel="icon" type="image/x-icon" href="img/favico.png">
+
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/aboutUsStyle.css">
+
+    <!-- Navbar scroll -->
+    <script>
+        $(document).ready(function () {
+            var scrollTop = 0;
+            $(window).scroll(function () {
+                scrollTop = $(window).scrollTop();
+                $('.counter').html(scrollTop);
+                //176
+                if (scrollTop >= 176) {
+                    $('#global-nav').addClass('scrolled-nav');
+                    $('#global-nav').addClass('navbar-fixed-top');
+                    $('#logoKrofna').hide();
+                    $('#row1').css('margin-top', '25em');
+                } else if (scrollTop < 176) {
+                    $('#global-nav').removeClass('scrolled-nav');
+                    $('#global-nav').removeClass('navbar-fixed-top');
+                    $("#logoKrofna").show();
+                    $('#row1').css('margin-top', '9em');
+                }
+
+            });
+        });
+
+    </script>
+
 </head>
 
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav id="global-nav" class="navbar navbar-default navbar-top">
+        <a id="logoKrofna" href="index.html">
+            <img src="img/slatkoteka-logo-krofna.png" alt="Krofna">
+        </a>
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -26,12 +58,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">
-                    <img src="img/slatkoteka-logo-krofna.png" alt="Slatkoteka" style="width: 40px; height: 33px; display: block;">
-                </a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-left">
+                <ul id="navBarList" class="nav navbar-nav">
                     <li>
                         <a href="index.html">Početna</a>
                     </li>
@@ -71,32 +100,32 @@
     <div class="container" id="row1">
         <div class="row">
             <div class="col-md-6">
-                <img src="img/about-us-donut.jpg" style="width: 30em; height: 40em; text-align: center;">
+                <img src="img/about-us-donut.jpg">
             </div>
-            <div class="col-md-6" style="text-align: center;">
-                <h1 style="text-align:center;">Ko Smo Mi</h1>
-                <p style="text-align: center">
+            <div class="col-md-6" class="text-center">
+                <h1 class="text-center">Ko Smo Mi</h1>
+                <p class="text-center">
                     Po malo zaboravljene krofne vraćaju se na velika vrata, u novom, sjajnom ruhu! Znate li gde možete naći savršene krofne ukrašene
                     na hiljadu načina, baš svaki put? Krofne takvog ukusa kao da ste zagrizli komadić oblaka? Otkrivamo vam
                     mesto gde žive najbolje krofne u gradu. Nedavno otvorena Slatkoteka - carstvo krofni u Beogradu, u ulici
                     Višnjićeva 5.
                 </p>
-                <p style="text-align: center">
+                <p >
                     Krofne se prave po specijalnom i mnogo puta isprobanom receptu, tako da imaju onaj vazdušasti i lagani ukus, ali sa obaveznom
                     hrskavom koricom. Ove krofne imaju jedinstvenu aromu i izgledaju senzacionalno.
                 </p>
-                <p style="text-align: center">
+                <p class="text-center">
                     Koje vrste krofni pravi Slatkoteka? U Slatkoteci ćete uživati u preko 15 različitih vrsta krofni. Najteže je opredeliti se
                     koju prvo da probate. Jedinstven i neodoljiv ambijent, uz ljubazno osoblje, upotpunjuje celi doživljaj
                     i čini da se osećate kao da sanjate budni. Pređite slatko - krofnasti prag i tu vas čekaju Nutelofna,
                     Kinder krofna, Cookie sa Oreo keksom, Krofnaela, Bademina i mnoštvo drugih krofni sa vašim omiljenim
                     prelivom, čokoladom, ili onih punjenih sočnom marmeladom, koje vraćaju u detinjstvo.
                 </p>
-                <p style="text-align: center">
+                <p class="text-center">
                     Probajte najukusnije krofne svakog dana od 10:00 do 22:00 časa ili ih poručite na: 065 33 00 508. Cene krofni u Slatkoteci
                     su više nego povoljne, tako da svoj omiljeni ukus možete dobiti za samo 90, 110 ili 130 dinara.
                 </p>
-                <p style="text-align: center">
+                <p class="text-center">
                     Pozivamo vas i da učestvujte u nagradnoj igri svakog ponedeljka, i osvojite paket od 6 krofni! Tu su i brojne akcije kao
                     što je 5 + 1 gratis, kao i unikatne krofne koje pravimo svake srede! Ovo nije dovoljno? Onda će Vas krofna
                     od pravog jestivog zlata, sigurno kupiti.
@@ -105,11 +134,16 @@
         </div>
     </div>
 
-    <footer class="text-center footer">
-        <div class="container">
-            <p>Slatkoteka | Višnjićeva 5, Beograd | Poručivanje i dostava: 065 33 00 508</p>
-        </div>
+    <!-- Footer -->
+    <footer class="text-center">
+        <a id="instalink" target="_blank" href="https://www.instagram.com">
+            <img id="instaicon" src="img/instaicon.png" alt="Instagram">
+        </a>
+        <a id="fblink" target="_blank" href="https://www.facebook.com">
+            <img id="fbicon" src="img/fbicon.png" alt="Facebook">
+        </a>
     </footer>
+
 </body>
 
 </html>

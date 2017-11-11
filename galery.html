@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Slatkoteka - Ovde žive krofne - Beograd dostava</title>
+    <title>Galerija - Slatkoteka - Beograd dostava</title>
+
+    <!-- Favicon link -->
+    <link rel="icon" type="image/x-icon" href="img/favico.png">
 
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="js/lightbox.js"></script>
@@ -13,13 +16,43 @@
         crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/indexStyle.css">
+    <link rel="stylesheet" href="css/galleryStyle.css">
     <link rel="stylesheet" href="css/lightbox.css">
+
+    <!-- Navbar scroll -->
+    <script>
+        $(document).ready(function () {
+            var scrollTop = 0;
+            $(window).scroll(function () {
+                scrollTop = $(window).scrollTop();
+                $('.counter').html(scrollTop);
+                //176
+                if (scrollTop >= 176) {
+                    $('#global-nav').addClass('scrolled-nav');
+                    $('#global-nav').addClass('navbar-fixed-top');
+                    $('#logoKrofna').hide();
+                    $('#section').css('margin-top', '19em');
+                } else if (scrollTop < 176) {
+                    $('#global-nav').removeClass('scrolled-nav');
+                    $('#global-nav').removeClass('navbar-fixed-top');
+                    $("#logoKrofna").show();
+                    $('#section').css('margin-top', '3em');
+                }
+
+            });
+        });
+
+    </script>
 
 </head>
 
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
+
+    <!-- Navbar -->
+    <nav id="global-nav" class="navbar navbar-default navbar-top">
+        <a id="logoKrofna" href="index.html">
+            <img src="img/slatkoteka-logo-krofna.png" alt="Krofna">
+        </a>
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -27,17 +60,27 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">
-                    <img src="img/slatkoteka-logo-krofna.png" alt="Slatkoteka" style="width: 40px; height: 33px; display: block;">
-                </a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-left">
+                <ul id="navBarList" class="nav navbar-nav">
                     <li>
                         <a href="index.html">Početna</a>
                     </li>
-                    <li>
-                        <a href="menu.html">Meni</a>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Meni
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="menu.html#accordion">Asortiman</a>
+                            </li>
+                            <li>
+                                <a href="menu.html#akcije">Akcije</a>
+                            </li>
+                            <li>
+                                <a href="menu.html#nagrade">Nagrade</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <a href="order.html">Naručivanje</a>
@@ -48,19 +91,19 @@
                     <li>
                         <a href="contact.html">Kontakt</a>
                     </li>
-
                     <li>
-                        <a href="gallery.html">Galerija</a>
+                        <a href="galery.html">Galerija</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section>
+    <!-- Gallery -->
+    <section id="section" class="text-center">
         <hr />
-        <div class="container-fluid">
-            <h1>Galerija</h1>
+        <div class="container" class="text-center">
+            <h1 class="text-center">Galerija</h1>
             <div>
                 <a href="img/gallery/gpic1.jpg" data-lightbox="roadtrip-set" data-title="Click the right half of the image to move forward.">
                     <img class="galleryPic" src="img/gallery/gpic1.jpg" alt="" />
@@ -103,10 +146,14 @@
         </div>
     </section>
 
-    <footer>
-        <div>
-            <p>Slatkoteka | Višnjićeva 5, Beograd | Poručivanje i dostava: 065 33 00 508</p>
-        </div>
+    <!-- Footer -->
+    <footer class="text-center">
+        <a id="instalink" target="_blank" href="https://www.instagram.com">
+            <img id="instaicon" src="img/instaicon.png" alt="Instagram">
+        </a>
+        <a id="fblink" target="_blank" href="https://www.facebook.com">
+            <img id="fbicon" src="img/fbicon.png" alt="Facebook">
+        </a>
     </footer>
 
 </body>
