@@ -7,16 +7,50 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Slatkoteka - Ovde žive krofne - Beograd dostava</title>
 
+    <!-- Favicon link -->
+    <link rel="icon" type="image/x-icon" href="img/favico.png">
+
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/indexStyle.css">
+
+    <!-- Navbar scroll -->
+    <script>
+        $(document).ready(function () {
+            var scrollTop = 0;
+            $(window).scroll(function () {
+                scrollTop = $(window).scrollTop();
+                $('.counter').html(scrollTop);
+                //176
+                if (scrollTop >= 176) {
+                    $('#global-nav').addClass('scrolled-nav');
+                    $('#global-nav').addClass('navbar-fixed-top');
+                    $('#logoKrofna').hide();
+                    $('#tekst1').css('margin-top', '17.3em');
+                } else if (scrollTop < 176) {
+                    $('#global-nav').removeClass('scrolled-nav');
+                    $('#global-nav').removeClass('navbar-fixed-top');
+                    $("#logoKrofna").show();
+                    $('#tekst1').css('margin-top', '0em');
+                }
+
+            });
+        });
+
+    </script>
+
 </head>
 
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
+
+    <!-- Navbar -->
+    <nav id="global-nav" class="navbar navbar-default navbar-top">
+        <a id="logoKrofna" href="index.html">
+            <img src="img/slatkoteka-logo-krofna.png" alt="Krofna">
+        </a>
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -24,12 +58,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">
-                    <img src="img/slatkoteka-logo-krofna.png" alt="Slatkoteka" style="width: 40px; height: 33px; display: block;">
-                </a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-left">
+                <ul id="navBarList" class="nav navbar-nav">
                     <li>
                         <a href="index.html">Početna</a>
                     </li>
@@ -58,7 +89,6 @@
                     <li>
                         <a href="contact.html">Kontakt</a>
                     </li>
-
                     <li>
                         <a href="galery.html">Galerija</a>
                     </li>
@@ -67,7 +97,7 @@
         </div>
     </nav>
 
-    <div class="container">
+    <div id="tekst1" class="container">
         <div class="jumbotron">
             <p>Želite krofnu sa posebnim dizajnom, ukusom ili oblikom? Na pravoj ste adresi, jer Slatkoteka poslastičari želje
                 pretvaraju u stvarnost. Potrebno je da najavite svoju porudžbinu bar 1 dan ranije i poručite bar 10 istih
@@ -108,10 +138,14 @@
         </div>
     </div>
 
-    <footer>
-        <div>
-            <p>Slatkoteka | Višnjićeva 5, Beograd | Poručivanje i dostava: 065 33 00 508</p>
-        </div>
+    <!-- Footer -->
+    <footer class="text-center">
+        <a id="instalink" target="_blank" href="https://www.instagram.com">
+            <img id="instaicon" src="img/instaicon.png" alt="Instagram">
+        </a>
+        <a id="fblink" target="_blank" href="https://www.facebook.com">
+            <img id="fbicon" src="img/fbicon.png" alt="Facebook">
+        </a>
     </footer>
 
 </body>
