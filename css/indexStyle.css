@@ -13,14 +13,6 @@ body {
     background: transparent;
 }
 
-#contactIcons {
-    margin-top: 6em;
-    margin-bottom: 3em;
-    text-align: center;
-    font: 400 15px/1.8 Lato, sans-serif;
-    letter-spacing: 2px;  
-}
-
 .dropdown-menu {
     background-color: rgb(150, 10, 150);
 }
