@@ -15,10 +15,37 @@
     <link rel="stylesheet" href="css/contactStyle.css">
 </head>
 
+<script>
+    $(document).ready(function () {
+        var scrollTop = 0;
+        $(window).scroll(function () {
+            scrollTop = $(window).scrollTop();
+            $('.counter').html(scrollTop);
+
+            if (scrollTop >= 176) {
+                $('#global-nav').addClass('scrolled-nav');
+                $('#global-nav').addClass('navbar-fixed-top');
+                $('#logoKrofna').hide();
+                $('#contactIcons').css('margin-top', '22em');
+            } else if (scrollTop < 176) {
+                $('#global-nav').removeClass('scrolled-nav');
+                $('#global-nav').removeClass('navbar-fixed-top');
+                $("#logoKrofna").show();
+                $('#contactIcons').css('margin-top', '6em');
+            }
+
+        });
+    });
+
+</script>
+
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav id="global-nav" class="navbar navbar-default navbar-top">
+        <a id="logoKrofna" href="index.html">
+            <img src="img/slatkoteka-logo-krofna.png" alt="Krofna">
+        </a>
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -26,12 +53,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">
-                    <img src="img/slatkoteka-logo-krofna.png" alt="Slatkoteka" style="width: 40px; height: 33px; display: block;">
-                </a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-left">
+                <ul id="navBarList" class="nav navbar-nav">
                     <li>
                         <a href="index.html">Početna</a>
                     </li>
@@ -88,7 +112,7 @@
                 <p class="text-center">
                     <strong>TELEFON</strong>
                 </p>
-                <p style="font-size: 2.3em; color: yellow; margin-top: 0.5em;">
+                <p style="font-size: 2.3em; color: rgba(199, 71, 192, 0.527); margin-top: 0.5em;">
                     <strong>0631234567</strong>
                 </p>
             </div>
@@ -106,12 +130,13 @@
         </div>
     </div>
 
-
     <!-- Google Map -->
+    <hr>
     <div id="googleMap">
         <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJQ8qMSktlWkcRnDmzqpAOnVY&key=AIzaSyCb9YVMQU_iWdCymFYlog7okmvcXs0ZKZg"
             allowfullscreen></iframe>
     </div>
+    <hr>
 
     <!-- Contact form -->
     <form id="contact-form" action="" method="post" role="form">
@@ -137,7 +162,7 @@
                             <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
                         </div>
                     </div>
-                    <textarea class="form-control" id="comments" name="comments" placeholder="Poruka" rows="5" style="resize: none;" required></textarea>
+                    <textarea class="form-control" id="comments" name="comments" placeholder="Poruka" rows="5" required></textarea>
                     <div class="row">
                         <div class="col-md-12 form-group">
                             <button id="sendbtn" class="btn pull-right" type="submit">Pošalji</button>
@@ -148,6 +173,16 @@
             </div>
         </div>
     </form>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <a id="instalink" target="_blank" href="https://www.instagram.com">
+            <img id="instaicon" src="img/instaicon.png" alt="Instagram">
+        </a>
+        <a id="fblink" target="_blank" href="https://www.facebook.com">
+            <img id="fbicon" src="img/fbicon.png" alt="Facebook">
+        </a>
+    </footer>
 
 
 
