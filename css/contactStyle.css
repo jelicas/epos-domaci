@@ -44,3 +44,8 @@ textarea {
     letter-spacing: 3px;
     font: Lato, sans-serif;
 }
+
+hr {
+    height: 0.2em;
+    background-color: rgb(150, 10, 150);
+}
