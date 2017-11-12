@@ -15,7 +15,10 @@
         crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
+
+    <!-- Custom styles -->
     <link rel="stylesheet" href="css/contactStyle.css">
+    <link rel="stylesheet" href="css/navbarAndFooterStyle.css">
 
     <!-- Navbar scroll -->
     <script>
@@ -41,7 +44,7 @@
         });
 
     </script>
-    
+
 </head>
 
 
@@ -163,13 +166,16 @@
                 <div class="col-md-8">
                     <div class="row">
                         <div class="col-sm-6 form-group">
-                            <input class="form-control" id="name" name="name" placeholder="Ime" type="text" required>
+                            <input class="form-control" id="name" name="name" placeholder="Ime" type="text" oninvalid="this.setCustomValidity('Unesite ime!')"
+                                oninput="setCustomValidity('')" required>
                         </div>
                         <div class="col-sm-6 form-group">
-                            <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                            <input class="form-control" id="email" name="email" placeholder="Email" type="email" oninvalid="this.setCustomValidity('Unesite email!')"
+                                oninput="setCustomValidity('')" required>
                         </div>
                     </div>
-                    <textarea class="form-control" id="comments" name="comments" placeholder="Poruka" rows="5" required></textarea>
+                    <textarea class="form-control" id="comments" name="comments" placeholder="Poruka" rows="5" oninvalid="this.setCustomValidity('Unesite poruku!')"
+                        oninput="setCustomValidity('')" required></textarea>
                     <div class="row">
                         <div class="col-md-12 form-group">
                             <button id="sendbtn" class="btn pull-right" type="submit">Pošalji</button>

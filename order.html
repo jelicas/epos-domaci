@@ -15,7 +15,10 @@
         crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
+
+    <!-- Custom styles -->
     <link rel="stylesheet" href="css/orderStyle.css">
+    <link rel="stylesheet" href="css/navbarAndFooterStyle.css">
 
     <!-- Navbar scroll -->
     <script>
@@ -37,6 +40,37 @@
                     $('#forma').css('margin-top', '6em');
                 }
 
+            });
+        });
+
+    </script>
+
+    <!-- Custom form validation -->
+    <script>
+        $(document).ready(function () {
+            $('#contact-form').on('submit', function (e) {
+                
+                if (!e.isDefaultPrevented()) {
+                    
+                    var messageText = '';
+                    var tekst = $('#telefonInput').val();
+                    if (isNaN(tekst)) {
+                        messageText += 'Broj telefona unesite koristeći samo brojeve bez znakova!';
+                    } else if (tekst.length < 9) {
+                        messageText += '\n' + 'Broj telefona nije pravilno unet!';
+                    }
+
+                    var tekst2 = $('#numberInput').val();
+                    if (!(/^\d/.test())) {
+                        messageText += '\n' + 'Broj zgrade/kuće nije validan!';
+                    }
+
+                    var alertBox = '<div class="alert ' + 'danger' + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
+
+                    if (messageText) {
+                        $("#messages").html(alertBox);
+                    }
+                }
             });
         });
 
@@ -97,8 +131,10 @@
         </div>
     </nav>
 
+    <div id="messages"></div>
+
     <div id="forma" class="container" style="margin-top: 6em">
-        <form>
+        <form id="contact-form">
             <div class="col-sm-6">
                 <p>Ime *</p>
                 <input class="form-control" id="name" name="name" placeholder="Ime" type="text" oninvalid="this.setCustomValidity('Unesite ime!')"
@@ -107,7 +143,7 @@
                 <input class="form-control" id="surname" name="surname" placeholder="Prezime" type="text" oninvalid="this.setCustomValidity('Unesite prezime!')"
                     oninput="setCustomValidity('')" required>
                 <p>Telefon *</p>
-                <input class="form-control" id="phone" name="phone" placeholder="Telefon" type="number" oninvalid="this.setCustomValidity('Unesite broj telefona!')"
+                <input id="telefonInput" class="form-control" id="phone" name="phone" placeholder="Telefon" type="text" oninvalid="this.setCustomValidity('Unesite broj telefona!')"
                     oninput="setCustomValidity('')" required>
                 <p>Email </p>
                 <input class="form-control" id="email" name="email" placeholder="Email" type="text">
@@ -117,7 +153,7 @@
                 <input class="form-control" id="street" name="street" placeholder="Ulica" type="text" oninvalid="this.setCustomValidity('Unesite naziv ulice!')"
                     oninput="setCustomValidity('')" required>
                 <p>Broj *</p>
-                <input class="form-control" id="number" name="number" placeholder="Broj" type="number" oninvalid="this.setCustomValidity('Unesite broj zgrade!')"
+                <input id="numberInput" class="form-control" id="number" name="number" placeholder="Broj" type="text" oninvalid="this.setCustomValidity('Unesite broj zgrade!')"
                     oninput="setCustomValidity('')" required>
                 <p>Broj stana </p>
                 <input class="form-control" id="numberOfApartment" placeholder="Broj stana" type="number" oninvalid="this.setCustomValidity('Unesite broj stana!')"
@@ -127,8 +163,18 @@
                     <option value="Da">Da</option>
                     <option value="Ne">Ne</option>
                 </select>
-                <button id="sendbtn" class="btn pull-right" type="submit" style="margin-top: 1em;">Pošalji</button>
+
             </div>
+            <div id="radioGroup" class="container">
+                <p>Izaberite način plaćanja *</p>
+                <label class="radio-inline">
+                    <input type="radio" name="optradio" checked="checked">Gotovinski prilikom dostave</label>
+                <label class="radio-inline">
+                    <input type="radio" name="optradio">Karticom prilikom dostave</label>
+                <label class="radio-inline">
+                    <input type="radio" name="optradio">Platnom karticom - online</label>
+            </div>
+            <button id="sendbtn" class="btn pull-right" type="submit">Pošalji</button>
         </form>
     </div>
 
