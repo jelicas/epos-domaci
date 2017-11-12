@@ -96,6 +96,9 @@ footer a:hover {
     width: 4em;
 }
 
+/*Dovde je style samo za navbar i footer, ne bi bilo lose da se ovo sve izvuce u jedan fajl*/
+/*----------------------------------------------------------*/
+
 #row1 {
     margin-top: 9em;
 }
