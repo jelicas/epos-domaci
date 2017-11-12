@@ -16,7 +16,7 @@
         crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-    
+
     <link rel="stylesheet" href="css/lightbox.css">
 
     <!-- Custom styles -->
@@ -45,8 +45,18 @@
 
             });
         });
-
     </script>
+
+    <script>
+        $(document).ready(function () {
+            var date = new Date();
+            var meseci = ['Januar', 'Februar', 'Mart', 'April', 'Maj', 'Jun', 'Jul', 'Avgust', 'Septembar',
+                'Oktobar', 'Novembar', 'Decembar'
+            ];
+            document.getElementById("datumFooter").innerHTML = meseci[date.getMonth()] + ', ' + date.getFullYear();
+        });
+    </script>
+
 
 </head>
 
@@ -109,41 +119,41 @@
         <div class="container" class="text-center">
             <h1 class="text-center">Galerija</h1>
             <div>
-                <a href="img/gallery/gpic1.jpg" data-lightbox="roadtrip-set" data-title="Click the right half of the image to move forward.">
+                <a href="img/gallery/gpic1.jpg" data-lightbox="roadtrip-set" data-title="Kliknite na desni deo slike za sledecu.">
                     <img class="galleryPic" src="img/gallery/gpic1.jpg" alt="" />
                 </a>
 
-                <a href="img/gallery/gpic2.jpg" data-lightbox="roadtrip-set" data-title="Or press the right arrow on your keyboard.">
+                <a href="img/gallery/gpic2.jpg" data-lightbox="roadtrip-set" data-title="Ili mozete koristiti strelice na tastaturi">
                     <img class="galleryPic" src="img/gallery/gpic2.jpg" alt="" />
                 </a>
 
-                <a href="img/gallery/gpic3.jpg" data-lightbox="roadtrip-set" data-title="Or press the right arrow on your keyboard.">
+                <a href="img/gallery/gpic3.jpg" data-lightbox="roadtrip-set" data-title="Ili mozete koristiti strelice na tastaturi">
                     <img class="galleryPic" src="img/gallery/gpic3.jpg" alt="" />
                 </a>
 
-                <a href="img/gallery/gpic4.jpg" data-lightbox="roadtrip-set" data-title="Or press the right arrow on your keyboard.">
+                <a href="img/gallery/gpic4.jpg" data-lightbox="roadtrip-set" data-title="Ili mozete koristiti strelice na tastaturi">
                     <img class="galleryPic" src="img/gallery/gpic4.jpg" alt="" />
                 </a>
-                <a href="img/gallery/gpic5.jpg" data-lightbox="roadtrip-set" data-title="Or press the right arrow on your keyboard.">
+                <a href="img/gallery/gpic5.jpg" data-lightbox="roadtrip-set" data-title="Ili mozete koristiti strelice na tastaturi">
                     <img class="galleryPic" src="img/gallery/gpic5.jpg" alt="" />
                 </a>
-                <a href="img/gallery/gpic6.jpg" data-lightbox="roadtrip-set" data-title="Or press the right arrow on your keyboard.">
+                <a href="img/gallery/gpic6.jpg" data-lightbox="roadtrip-set" data-title="Ili mozete koristiti strelice na tastaturi">
                     <img class="galleryPic" src="img/gallery/gpic6.jpg" alt="" />
                 </a>
-                <a href="img/gallery/gpic7.jpg" data-lightbox="roadtrip-set" data-title="Or press the right arrow on your keyboard.">
+                <a href="img/gallery/gpic7.jpg" data-lightbox="roadtrip-set" data-title="Ili mozete koristiti strelice na tastaturi">
                     <img class="galleryPic" src="img/gallery/gpic7.jpg" alt="" />
                 </a>
-                <a href="img/gallery/gpic8.jpg" data-lightbox="roadtrip-set" data-title="Or press the right arrow on your keyboard.">
+                <a href="img/gallery/gpic8.jpg" data-lightbox="roadtrip-set" data-title="Ili mozete koristiti strelice na tastaturi">
                     <img class="galleryPic" src="img/gallery/gpic8.jpg" alt="" />
                 </a>
-                <a href="img/gallery/gpic9.jpg" data-lightbox="roadtrip-set" data-title="Or press the right arrow on your keyboard.">
+                <a href="img/gallery/gpic9.jpg" data-lightbox="roadtrip-set" data-title="Ili mozete koristiti strelice na tastaturi">
                     <img class="galleryPic" src="img/gallery/gpic9.jpg" alt="" />
                 </a>
 
-                <a href="img/gallery/gpic10.jpg" data-lightbox="roadtrip-set" data-title="Or press the right arrow on your keyboard.">
+                <a href="img/gallery/gpic10.jpg" data-lightbox="roadtrip-set" data-title="Ili mozete koristiti strelice na tastaturi">
                     <img class="galleryPic" src="img/gallery/gpic10.jpg" alt="" />
                 </a>
-                <a href="img/gallery/gpic11.jpg" data-lightbox="roadtrip-set" data-title="Or press the right arrow on your keyboard.">
+                <a href="img/gallery/gpic11.jpg" data-lightbox="roadtrip-set" data-title="Ili mozete koristiti strelice na tastaturi">
                     <img class="galleryPic" src="img/gallery/gpic11.jpg" alt="" />
                 </a>
             </div>
@@ -158,6 +168,7 @@
         <a id="fblink" target="_blank" href="https://www.facebook.com">
             <img id="fbicon" src="img/fbicon.png" alt="Facebook">
         </a>
+        <p id="datumFooter" class="text-center"></p>
     </footer>
 
 </body>

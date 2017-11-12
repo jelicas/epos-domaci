@@ -22,7 +22,7 @@
 
     <link type="text/css" href="css/jquery-ui.css" rel="Stylesheet" />
     <script src="js/jquery-ui.js"></script>
-    
+
     <!-- Accordion initialization -->
     <script>
         $(function () {
@@ -52,7 +52,6 @@
 
             });
         });
-
     </script>
 
     <!-- Smooth scrolling -->
@@ -83,6 +82,17 @@
             });
         })
     </script>
+
+    <script>
+        $(document).ready(function () {
+            var date = new Date();
+            var meseci = ['Januar', 'Februar', 'Mart', 'April', 'Maj', 'Jun', 'Jul', 'Avgust', 'Septembar',
+                'Oktobar', 'Novembar', 'Decembar'
+            ];
+            document.getElementById("datumFooter").innerHTML = meseci[date.getMonth()] + ', ' + date.getFullYear();
+        });
+    </script>
+
 
 </head>
 
@@ -205,6 +215,7 @@
         <a id="fblink" target="_blank" href="https://www.facebook.com">
             <img id="fbicon" src="img/fbicon.png" alt="Facebook">
         </a>
+        <p id="datumFooter" class="text-center"></p>
     </footer>
 
 </body>

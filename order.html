@@ -42,16 +42,15 @@
 
             });
         });
-
     </script>
 
     <!-- Custom form validation -->
     <script>
         $(document).ready(function () {
             $('#contact-form').on('submit', function (e) {
-                
+
                 if (!e.isDefaultPrevented()) {
-                    
+
                     var messageText = '';
                     var tekst = $('#telefonInput').val();
                     if (isNaN(tekst)) {
@@ -65,7 +64,9 @@
                         messageText += '\n' + 'Broj zgrade/kuće nije validan!';
                     }
 
-                    var alertBox = '<div class="alert ' + 'danger' + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
+                    var alertBox = '<div class="alert ' + 'danger' +
+                        ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' +
+                        messageText + '</div>';
 
                     if (messageText) {
                         $("#messages").html(alertBox);
@@ -73,8 +74,18 @@
                 }
             });
         });
-
     </script>
+
+    <script>
+        $(document).ready(function () {
+            var date = new Date();
+            var meseci = ['Januar', 'Februar', 'Mart', 'April', 'Maj', 'Jun', 'Jul', 'Avgust', 'Septembar',
+                'Oktobar', 'Novembar', 'Decembar'
+            ];
+            document.getElementById("datumFooter").innerHTML = meseci[date.getMonth()] + ', ' + date.getFullYear();
+        });
+    </script>
+
 
 </head>
 
@@ -186,6 +197,7 @@
         <a id="fblink" target="_blank" href="https://www.facebook.com">
             <img id="fbicon" src="img/fbicon.png" alt="Facebook">
         </a>
+        <p id="datumFooter" class="text-center"></p>
     </footer>
 
 
