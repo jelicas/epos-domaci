@@ -1,3 +1,13 @@
 #forma {
     padding-bottom: 10em;
 }
+
+#sendbtn {
+    margin-top: 1em;
+    color: white;
+    background-color: #777777;
+}
+
+#sendbtn:hover {
+    color: black;
+}
