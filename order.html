@@ -52,6 +52,8 @@
                 
                 if (!e.isDefaultPrevented()) {
                     
+                    e.preventDefault();
+                    
                     var messageText = '';
                     var tekst = $('#telefonInput').val();
                     if (isNaN(tekst)) {
@@ -61,13 +63,17 @@
                     }
 
                     var tekst2 = $('#numberInput').val();
-                    if (!(/^\d/.test())) {
+                    if (!(/^[0-9].*$/.test(tekst2))) {
                         messageText += '\n' + 'Broj zgrade/kuće nije validan!';
                     }
 
-                    var alertBox = '<div class="alert ' + 'danger' + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
+                    var alertBox;
 
                     if (messageText) {
+                        alertBox = '<div class="alert ' + 'alert-danger' + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
+                        $("#messages").html(alertBox);
+                    } else {
+                        alertBox = '<div class="alert ' + 'alert-success' + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + 'Uspesno ste narucili!' + '</div>';
                         $("#messages").html(alertBox);
                     }
                 }
@@ -131,7 +137,7 @@
         </div>
     </nav>
 
-    <div id="messages"></div>
+    
 
     <div id="forma" class="container" style="margin-top: 6em">
         <form id="contact-form">
@@ -174,9 +180,18 @@
                 <label class="radio-inline">
                     <input type="radio" name="optradio">Platnom karticom - online</label>
             </div>
-            <button id="sendbtn" class="btn pull-right" type="submit">Pošalji</button>
+            <div class="container">
+                <p>Opis porudžbine *</p>
+                <div id="messages" style="width: 80%;"></div>
+                <textarea name="textarea" id="opisNarudzbine" cols="30" rows="10" style="resize: none; width: 80%; border-radius: 2%;" oninvalid="this.setCustomValidity('Unesite porudžbinu!')"
+                oninput="setCustomValidity('')" required></textarea>
+                <button id="sendbtn" class="btn pull-right" type="submit" style="margin-top: 10em; margin-right: 5em;">Pošalji</button>
+            </div>
+            
         </form>
     </div>
+
+    
 
     <!-- Footer -->
     <footer class="text-center">
