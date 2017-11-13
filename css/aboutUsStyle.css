@@ -11,3 +11,9 @@ h1 {
     height: 40em;
     text-align: center;
 }
+
+@media (max-width: 450px) {
+    #row1 img {
+        width: 100%;
+    }
+}

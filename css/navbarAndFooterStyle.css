@@ -132,3 +132,10 @@ footer a:hover {
     height: 4em;
     width: 4em;
 }
+
+/* collapsed navbar style */
+
+#myNavbar.navbar-collapse.collapse.in {
+    background-color: rgba(199, 71, 192, 0.5);
+}
+
