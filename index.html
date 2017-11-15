@@ -53,6 +53,35 @@
         });
     </script>
 
+    <script>
+        //768
+        $(document).ready(function () {
+
+
+            $(window).resize(function () {
+                if ($(window).width() < 752) {
+                    $('#meni').removeClass('dropdown');
+                    $('#meniLink').attr('href', "menu.html");
+                    $('#meniLink').removeClass('dropdown-toggle');
+                    $('#meniLink').attr('data-toggle', '');
+                } else {
+                    $('#meni').addClass('dropdown');
+                    $('#meniLink').attr('href', "#");
+                    $('#meniLink').addClass('dropdown-toggle');
+                    $('#meniLink').attr('data-toggle', 'dropdown');
+                }
+
+            });
+
+            if ($(window).width() < 752) {
+                $('#meni').removeClass('dropdown');
+                $('#meniLink').attr('href', "menu.html");
+                $('#meniLink').removeClass('dropdown-toggle');
+                $('#meniLink').attr('data-toggle', '');
+            }
+        });
+    </script>
+
 </head>
 
 <body>
@@ -75,8 +104,8 @@
                     <li>
                         <a href="index.html">Početna</a>
                     </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Meni
+                    <li id="meni" class="dropdown">
+                        <a id="meniLink" class="dropdown-toggle" data-toggle="dropdown" href="#">Meni
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">

@@ -50,9 +50,9 @@
             $('#contact-form').on('submit', function (e) {
 
                 if (!e.isDefaultPrevented()) {
-                    
+
                     e.preventDefault();
-                    
+
                     var messageText = '';
                     var tekst = $('#telefonInput').val();
                     if (isNaN(tekst)) {
@@ -74,9 +74,39 @@
                     } else {
                         alertBox = '<div class="alert ' + 'alert-success' + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + 'Uspesno ste narucili!' + '</div>';
                         $("#messages").html(alertBox);
+                        // ovde bi isao ajax post
                     }
                 }
             });
+        });
+    </script>
+
+    <script>
+        //768
+        $(document).ready(function () {
+
+
+            $(window).resize(function () {
+                if ($(window).width() < 752) {
+                    $('#meni').removeClass('dropdown');
+                    $('#meniLink').attr('href', "menu.html");
+                    $('#meniLink').removeClass('dropdown-toggle');
+                    $('#meniLink').attr('data-toggle', '');
+                } else {
+                    $('#meni').addClass('dropdown');
+                    $('#meniLink').attr('href', "#");
+                    $('#meniLink').addClass('dropdown-toggle');
+                    $('#meniLink').attr('data-toggle', 'dropdown');
+                }
+
+            });
+
+            if ($(window).width() < 752) {
+                $('#meni').removeClass('dropdown');
+                $('#meniLink').attr('href', "menu.html");
+                $('#meniLink').removeClass('dropdown-toggle');
+                $('#meniLink').attr('data-toggle', '');
+            }
         });
     </script>
 
@@ -113,8 +143,8 @@
                     <li>
                         <a href="index.html">Početna</a>
                     </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Meni
+                    <li id="meni" class="dropdown">
+                        <a id="meniLink" class="dropdown-toggle" data-toggle="dropdown" href="#">Meni
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
@@ -146,7 +176,7 @@
         </div>
     </nav>
 
-    
+
 
     <div id="forma" class="container" style="margin-top: 6em">
         <form id="contact-form">
@@ -193,14 +223,14 @@
                 <p>Opis porudžbine *</p>
                 <div id="messages" style="width: 80%;"></div>
                 <textarea name="textarea" id="opisNarudzbine" cols="30" rows="10" style="resize: none; width: 80%; border-radius: 2%;" oninvalid="this.setCustomValidity('Unesite porudžbinu!')"
-                oninput="setCustomValidity('')" required></textarea>
+                    oninput="setCustomValidity('')" required></textarea>
                 <button id="sendbtn" class="btn pull-right" type="submit" style="margin-top: 10em; margin-right: 5em;">Pošalji</button>
             </div>
-            
+
         </form>
     </div>
 
-    
+
 
     <!-- Footer -->
     <footer class="text-center">
